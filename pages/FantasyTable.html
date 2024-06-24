@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="icon" type="image/svg+xml" href="../public/img/racing-helmet.svg">
+        <title>2021 F1 Season</title>
+    </head>
+    <body class="fantasyTable">
+        <header>
+            <nav>
+                <img class="burger" src="../public/img/burger_menu.svg"/>
+                <div class="test"></div>
+                <ul class="nav_list">
+                <li class="nav_item"><a href="Home.html"><span class="nav_item_content">Home</span></a></li>
+                <li class="nav_item"><a href="Standings.html"><span class="nav_item_content">Standings</span></a></span></li>
+                <li class="nav_item"><a href="Contact.html"><span class="nav_item_content">Contact</span></a></span></li>
+                <li class="nav_item"><a href="FantasyTable.html"><span class="nav_item_content">Fantasy Table</span></a></span></li>
+                </ul>
+            </nav> 
+        </header>
+        <main>
+            <h1 class="main_title">Create your own standings!</h1>
+            <div class="standings_table_container">
+                <table class="standings_table">
+                    <thead>
+                        <tr>
+                            <th>Driver</th>
+                            <th>Team</th>
+                            <th>Country</th>
+                            <th>Points</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="standings_table_body">
+                    </tbody>
+                </table>
+            </div>
+            <p class="status_text"></p>
+            <div class="btn_container">
+                <button disabled class="btn_standing btn_add">
+                    New Driver
+                </button>
+                <button disabled class="btn_standing btn_add_random">
+                    New Random Driver
+                </button>
+            </div>
+        </main>
+        <footer>
+            <img class="footer_logo" src="../public/img/sz_main_logo.svg" alt="Sergio Zampieri - webdev">
+            <span class="footer_text">Made with passion - 2024</span>
+        </footer>
+        <script type="text/javascript" src="../scripts/app.js"></script>
+        <script type="text/javascript" src="../scripts/apiManagement.js"></script>
+    </body>
+</html>

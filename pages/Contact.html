@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="icon" type="image/svg+xml" href="../public/img/racing-helmet.svg">
+        <title>2021 F1 Season</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <img class="burger" src="../public/img/burger_menu.svg"/>
+                <div class="test"></div>
+                <ul class="nav_list">
+                <li class="nav_item"><a href="Home.html"><span class="nav_item_content">Home</span></a></li>
+                <li class="nav_item"><a href="Standings.html"><span class="nav_item_content">Standings</span></a></span></li>
+                <li class="nav_item"><a href="Contact.html"><span class="nav_item_content">Contact</span></a></span></li>
+                <li class="nav_item"><a href="FantasyTable.html"><span class="nav_item_content">Fantasy Table</span></a></span></li>
+                </ul>
+            </nav> 
+        </header>
+        <main class="main_contact_container">
+            <div class="modal">
+                <span class="modal_text"></span>
+                <button class="modal_button">Close</button>
+            </div>
+            <h1 class="main_title">Contact Us!</h1>
+            <p class="main_text">
+                We like to hear your input to make a better community. Your feedback and suggestions are invaluable to us as we strive to improve and grow together. Please reach out with any comments, questions, or concerns. Thank you for being an essential part of our community!
+            </p>
+            <div class="image_form_container">
+                <img class="mv-image" src="../public/img/mv-transparent.png" alt="Max Verstappen">
+                <div class="form_container">
+                    <form action="" class="form">
+                        <input type="text" id="name" name="fname" placeholder="First Name" required/>
+                        <input type="text" id="surename" name="lname" placeholder="Last Name" required/>
+                        <input type="email" id="e-mail" name="e-mail" placeholder="e-Mail" required/>
+                        <input type="text-area" id="message" name="message" placeholder="Message" required/>
+
+                        <div class="captcha">
+                            <label class="captcha_label" for="captcha"></label>
+                            <input type="text" class="captcha_input" name="captcha" placeholder="Fill to procede" required/>
+                        </div>
+                        <button class="submit_button" id="submit_button" type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <img class="footer_logo" src="../public/img/sz_main_logo.svg" alt="Sergio Zampieri - webdev">
+            <span class="footer_text">Made with passion - 2024</span>
+        </footer>
+        <script type="text/javascript" src="../scripts/app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,541 @@
+/* general style */
+
+:root{
+    --primary-100:#FF0000;
+    --primary-200:#ff5a36;
+    --primary-300:#ffc993;
+    --accent-100:#FFFFFF;
+    --accent-200:#9b9b9b;
+    --text-100:#FFFFFF;
+    --text-200:#e0e0e0;
+    --bg-100:#1C1C1C;
+    --bg-200:#2b2b2b;
+    --bg-300:#434343; 
+    --table-bg:rgba(255,255,255,0.2);
+    --table-hover: rgba(255,255,255,0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+@font-face {
+    font-family: futura;
+    src: url(../public/fonts/FUTURA55REGULAR.TTF);
+ }
+
+body {
+    font-family: futura;
+    background: linear-gradient(180deg, var(--bg-100) 0%, var(--bg-300) 100%);  
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+/* navbar related style */
+
+header{
+    position: sticky;
+    top: 0;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(90deg, var(--primary-200) 68%, var(--primary-100) 100%);  
+}
+
+.nav_list {
+    position: absolute;
+    top: 60px;
+    width: 300px;
+    height: auto;
+    background-color: var(--primary-200);
+}
+
+.show {
+    visibility: hidden;
+}
+
+.nav_item {
+    list-style-type: none;
+    padding: 20px 0px 20px 40px;
+}
+
+.nav_item:hover {
+    transform: translateX(30px); 
+    transition: 220ms;
+}
+
+.nav_item_content {
+    color: var(--bg-200);
+    font-size: 40px;
+    opacity: 70%;
+}
+
+.nav_item_content:hover{
+    opacity: 100%;
+}
+
+.burger {
+    cursor: pointer;
+    margin-left: 5px;
+    align-self: center;
+    height: 40px;
+    width: 40px;
+}
+
+@media only screen and (min-width: 1000px) {
+    nav {
+        position: sticky;    
+        top: 0;
+        width: auto;
+    }
+    
+    .nav_list {
+        position: absolute;
+        width: auto;
+        right: 0;
+        top:0;
+        margin-right: 30px;
+        display: flex;
+        gap: 20px;
+        visibility: visible;
+        background-color: transparent;
+    }
+
+    .burger {
+        display: none;
+     }
+
+     .nav_item {
+        padding:0;
+    }
+
+    .nav_item:hover {
+        transform: translateY(5px); 
+        transition: 220ms;
+    }
+}
+
+/* text related style */
+
+.main_title {
+    padding: 10px;
+    font-size: 36px;
+    text-align: center;
+    color: var(--primary-300);
+}
+
+.main_text {
+    padding: 10px 20px;
+    font-size: 20px;
+    text-align: justify;
+    color: var(--accent-100);
+}
+
+.status_text {
+    padding: 10px 20px;
+    font-size: 20px;
+    text-align: justify;
+    color: var(--accent-100);
+    text-align: center;
+}
+
+@media only screen and (min-width: 1000px) {
+    .main_title {
+        font-size: 46px;
+        text-align: center;
+        color: var(--primary-300);
+    }
+    
+    .main_text {
+        padding: 40px 40px;
+        font-size: 30px;
+        text-align: justify;
+        color: var(--accent-100);
+    }
+}
+
+/* card related style */
+
+.flag_img {
+    margin-top: 5%;
+    object-fit: cover;
+    border-radius: 20%;
+    
+}
+
+.country_card_container {
+    margin-top: 40px;
+    margin-bottom: 40px;;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.country_card {
+    margin: 13px;
+    padding: 15px;
+    width: 150px;
+    height: 250px;
+    border-radius: 30px;
+    background: var(--accent-200);
+    counter-increment: step-counter;
+}
+
+.country_card:hover {
+    transition-duration: 300ms;
+    box-shadow: 15px 15px 30px var(--primary-100),-15px -15px 30px var(--primary-200);
+}
+
+.country_card:before {
+    content: counter(step-counter);
+    font-size: 20px;
+    color: var(--text-200);
+    font-weight: bold;
+    border-radius: 100%;
+}
+
+.card_title{
+    margin: 0;
+    padding: 0;
+    font-size: 1.25rem;
+    color: var(--text-100);
+    text-align: center;
+}
+.card_date{
+    margin: 0;
+    padding: 0;
+    color: var(--text-200);
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* standings table related style */
+
+.standings_table_container {
+    height: auto;
+}
+
+.btn_container{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.btn_add, .btn_add_random {
+        align-self: center;
+        margin: 20px 0;
+        padding: 1rem;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 20px;
+        color: var(--accent-100);
+        background-color: var(--bg-200);
+        border-style: none;
+}
+
+.btn_add:hover, .btn_add_random:hover{
+    background-color: var(--primary-200);
+}
+
+.standings_table {
+    margin-top: 5vh;
+    height:150px;
+    overflow:auto;  
+	width: 100%;
+	border-collapse: collapse;
+	overflow: hidden;
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: var(--table-bg);
+	color: var(--text-100);
+}
+
+th {
+	text-align: left;
+    font-size: 20px;
+}
+
+
+tbody {
+	tr {
+		&:hover {
+			background-color: var(--table-hover);
+		}
+	}
+}
+
+#fullName_TI,#team_TI,#country_TI,#points_TI  {
+    width: 80%;
+}
+
+.btn_ok {
+    height: full;
+    align-self: center;
+    margin: 20px 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    border-style: none;
+}
+.btn_ok:hover {
+    background-color: greenyellow;
+}
+
+.btn_edit {
+    height: full;
+    align-self: center;
+    margin: 20px 0;
+    padding: 0.35rem;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 20px;
+    border-style: none;
+}
+.btn_edit:hover {
+    background-color: lightskyblue;
+}
+
+.btn_delete {
+    height: full;
+    align-self: center;
+    margin: 20px 0;
+    padding: 0.35rem;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 20px;
+    border-style: none;
+}
+.btn_delete:hover {
+    background-color: red;
+}
+
+.btn_cancel {
+    height: full;
+    align-self: center;
+    margin: 20px 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 20px;
+    border-style: none;
+}
+.btn_cancel:hover {
+    background-color: red;
+}
+
+@media only screen and (min-width: 1000px) {
+    td {
+        font-size: 20px;
+    }
+
+    th {
+        font-size: 32px;
+    }
+
+    .btn_cancel, .btn_ok {
+        font-size: 20px;
+        padding: 1rem;
+    }
+
+    .btn_edit, .btn_delete {
+        font-size: 16px;
+        padding: 1rem;
+    }
+}
+
+
+
+/* form related style */
+.main_contact_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.image_form_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.mv-image {
+    max-height: 500px;
+    object-fit: contain;
+
+}
+
+.form_container {
+    width: 90%;
+}
+
+.form_container input, label {
+    width: 90%;
+    margin: 1rem;
+    font-size: 18px;
+    background-color: inherit;
+    color: var(--accent-100);;
+}
+
+.form_container input {
+    padding: 1rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.captcha {
+    display: flex;
+    gap: 20px;
+}
+
+.captcha label, input {
+    text-align: center;
+    font-size: 20px;
+    padding: 0.5rem;
+    border: 1px solid var(--accent-100);
+    border-radius: 20px;
+}
+
+.captcha label, input:hover{
+    background-color: var(--table-hover);
+}
+
+.captcha input {
+    background-color: var(--bg-300);
+    color: var(--text-200);
+}
+
+.captcha input::placeholder {
+    color: var(--accent-100);;
+}
+
+.submit_button {
+    align-self: center;
+    margin: 20px 0;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    color: var(--accent-100);
+    background-color: var(--bg-200);
+    border-style: none;
+}
+
+.submit_button:hover{
+    background-color: var(--primary-200);
+}
+
+.modal {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 250px;
+    border-radius: 30px;
+    background-color: var(--bg-200);
+    border: 2px solid var(--primary-200);
+}
+
+.modal span {
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    color: var(--accent-100);
+}
+
+.modal button {
+    position: relative;
+    align-self: center;
+    margin: 10px;
+    bottom: 0;
+    border: 2px solid var(--accent-100);
+    border-radius: 20px;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    color: var(--bg-300);
+}
+
+.modal.show{
+    visibility:visible;
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .image_form_container{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+    }
+    .form_container {
+        width: 700px;
+    }
+    .captcha label, input {
+        font-size: 38px;
+    }
+    .submit_button {
+        font-size: 38px;
+    }
+}
+
+/* footer related style */
+footer{
+    bottom: 0;
+    min-height: 80px;
+    width: 100%;
+    border-top: solid var(--primary-100);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background:linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end
+
+}
+
+.footer_logo{
+    padding-right: 30px;
+    max-width: 300px;
+    object-fit: contain;
+    
+}
+
+.footer_text{
+    padding-right: 30px;
+    color: var(--accent-200);
+    
+}
+
+@media only screen and (min-width: 1000px) {
+    .footer_text{
+        font-size: 24px;
+    }
+}
